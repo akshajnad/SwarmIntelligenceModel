@@ -16,6 +16,9 @@ ea_actions = sp_actions
 ea_funs_and_results = sp_funs_and_results
 # best specimen
 best_specimen = copy.deepcopy(memory["ships"])
+
+best_specimen = copy.deepcopy(memory["shipyards"])
+
 # best specimen fitness
 best_specimen_fitness = get_average_halite(evaluate("halite", [swarm_agent],
                             num_episodes=episodes, configuration={"agentExec": "LOCAL"}
@@ -33,3 +36,10 @@ for i in range(generations_amount):
 # replace memory of ships with best specimen
 memory["ships"] = copy.deepcopy(best_specimen)
 print("Best specimen fitness: {0}, best specimen: {1}".format(best_specimen_fitness, best_specimen))
+
+
+# replace memory of shipyards with best specimen
+memory["shipyards"] = copy.deepcopy(best_specimen)
+print("Best specimen fitness: {0}, best specimen: {1}".format(best_specimen_fitness, best_specimen))
+
+#run ships and shipyards separately
